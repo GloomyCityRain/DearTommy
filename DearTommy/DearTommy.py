@@ -172,7 +172,7 @@ class ContentsPage(tk.Frame):
         self.listbox.pack(side="left", fill="y", padx=(0, 10))
         self.listbox.bind("<<ListboxSelect>>", self.load_selected_file)
 
-        self.text_area = tk.Text(content_frame, width=60, height=20, font=TEXT_FONT, bg=TEXT_BG)
+        self.text_area = tk.Text(content_frame, width=60, height=20, font=TEXT_FONT, bg=TEXT_BG, wrap="word")
         self.text_area.pack(side="left", fill="both", expand=True)
         self.text_area.config(state="disabled")
 
@@ -279,7 +279,7 @@ class DiaryPage(tk.Frame):
         self.date_label = tk.Label(frame, text=datetime.now().strftime("%d/%m/%y"), font=TITLE_FONT, bg=FRAME_COLOR)
         self.date_label.pack(pady=10)
 
-        self.text_area = tk.Text(frame, width=70, height=20, font=TEXT_FONT, bg=TEXT_BG)
+        self.text_area = tk.Text(frame, width=70, height=20, font=TEXT_FONT, bg=TEXT_BG, wrap="word")
         self.text_area.pack(pady=10)
 
         button_frame = tk.Frame(frame, bg=FRAME_COLOR)
@@ -340,3 +340,4 @@ class DiaryPage(tk.Frame):
 if __name__ == "__main__":
     app = DearTommy()
     app.mainloop()
+
